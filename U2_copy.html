@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouCopy</title>
+  <style>
+    * {
+      font-family: 微軟正黑體;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .leftbar {
+      width: 230px;
+      height: 100%;
+      background: rgba(19, 19, 19, 0.95);
+      display: inline-block;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    img {
+      display: inline-block;
+    }
+
+    h4 {
+      display: inline-block;
+      text-align: center;
+      margin: auto;
+      color: rgb(235, 235, 235);
+      position: absolute;
+      bottom: 16px;
+      left: 60px;
+      font-size: 15px;
+    }
+
+    hr {
+      border: none;
+      background-color: rgb(77, 77, 77);
+      height: 1px;
+    }
+
+    .Login {
+      border: 1px solid rgb(81, 148, 250);
+      display: inline-block;
+      color: rgb(81, 148, 250);
+      padding: 4px 4px 1px 4px;
+      margin: 14px;
+      position: absolute;
+      width: 80px;
+      height: 25px;
+      text-align: center;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .qq:hover {
+      background: rgb(59, 59, 59);
+    }
+
+    .rightbar {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .topbar {
+      width: 100%;
+      height: 55px;
+      background-color: rgba(19, 19, 19, 0.95);
+      position: fixed;
+      left: 230px;
+      top: 0;
+      text-align: center;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .topbar1 {
+      width: 100%;
+      height: 55px;
+      background-color: rgba(19, 19, 19, 0.95);
+      position: fixed;
+      left: 230px;
+      top: 56px;
+      display: inline-block;
+      text-align: center;
+      line-height: 55px;
+      z-index: 2;
+    }
+
+    input {
+      width: 23vw;
+      height: 33px;
+      border: 1px solid rgb(59, 59, 59);
+      border-right: 0px;
+      margin-top: 9px;
+      margin-left: -10%;
+      background-color: rgb(14, 14, 14);
+      font-size: 15px;
+      color: rgb(235, 235, 235);
+      text-indent: 5px;
+    }
+
+    .search {
+      width: 57px;
+      height: 35px;
+      background: rgb(59, 59, 59);
+      display: inline-block;
+      color: rgb(235, 235, 235);
+      font-size: 28px;
+      border: 1px solid rgb(59, 59, 59);
+      border-radius: 2px;
+      margin-left: -2px;
+      line-height: 28px;
+
+    }
+
+    .ss {
+      margin-top: -24px;
+      display: inline-block;
+      transform: translate(-14px, 21.5px);
+    }
+
+    .kind {
+      height: 32px;
+      width: max-content;
+      background: rgb(59, 59, 59);
+      border: 1px solid rgb(107, 107, 107);
+      border-radius: 50px;
+      color: rgb(235, 235, 235);
+      line-height: 32px;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .kind:hover {
+      background: rgb(121, 121, 121);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .ad {
+      width: 100%;
+      height: 280px;
+      background-color: black;
+      position: absolute;
+      display: inline-block;
+      transform: translateX(-50%);
+    }
+
+
+    .col {
+      width: 21%;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .title {
+      width: 70%;
+      height: 45px;
+      display: inline-block;
+      color: rgb(235, 235, 235);
+      font-size: 100%;
+      overflow: hidden;
+      padding-top: 2%;
+      margin-left: 2%;
+    }
+
+    .na {
+      width: 65%;
+      display: inline-block;
+      color: rgb(161, 161, 161);
+      font-size: 16px;
+      overflow: hidden;
+      margin-left: 17%;
+    }
+
+    .artist:visited {
+      color: rgb(161, 161, 161);
+
+
+    }
+
+    .artist:hover {
+      color: rgb(235, 235, 235);
+    }
+
+    .line {
+      width: 84%;
+      height: 4px;
+      background: rgb(59, 59, 59);
+      transform: translateX(9%);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="leftbar">
+    <div style="position: relative;">
+      <a href="#"><img src="./pic/三條線.png" alt="3 lines" width="23%"></a>
+      <a href="#"><img src="./pic/MArk.png" alt="YoutubeMark" title="Youtube" width="75%"></a>
+    </div>
+    <a href="#">
+      <div style="position: relative;background: rgb(59, 59, 59);">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="首頁">
+        <h4>首頁</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="探索">
+        <h4>探索</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="訂閱內容">
+        <h4>訂閱內容</h4>
+      </div>
+    </a>
+    <hr>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="媒體庫">
+        <h4>媒體庫</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="觀看紀錄">
+        <h4>觀看紀錄</h4>
+      </div>
+    </a>
+    <hr>
+    <div style="position: relative;">
+      <p style="font-size: 15px;margin: auto; text-align: center; width: 180px; color: rgb(223, 223, 223);">
+        登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</p>
+      <a class="Login" href="#" style="left: 12px;">⊚ 登入</a>
+    </div>
+    <hr style="position: relative;top: 50px;">
+    <div style="position: relative;top: 45px;height: 30px;">
+      <h4 style="position: relative;top: 5px; left: 20px; color: darkgray;">YOUTUBE 精選</h4>
+    </div>
+    <a href="#">
+      <div class="qq" style="position: relative; top: 320px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="360度電影">
+        <h4>360度電影</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="音樂">
+        <h4>音樂</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="體育">
+        <h4>體育</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="遊戲">
+        <h4>遊戲</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="電影">
+        <h4>電影</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="新聞">
+        <h4>新聞</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="直播">
+        <h4>直播</h4>
+      </div>
+    </a>
+    <hr style="position: relative;top: 40px;">
+    <a href="#">
+      <div class="qq" style="position: relative;top: 40px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="瀏覽頻道">
+        <h4>瀏覽頻道</h4>
+      </div>
+    </a>
+    <hr style="position: relative;top: 40px;">
+    <div style="position: relative;top: 35px;height: 30px;">
+      <h4 style="position: relative;top: 5px; left: 20px; color: darkgray;">更多 YOUTUBE 功能</h4>
+    </div>
+    <a href="#">
+      <div class="qq" style="position: relative;top: 90px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="直播">
+        <h4>直播</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="Youtube Premium">
+        <h4>Youtube Premium</h4>
+      </div>
+    </a>
+    <hr style="position: relative;top: 40px;">
+    <a href="#">
+      <div class="qq" style="position: relative;top: 40px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="設定">
+        <h4>設定</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;top: 40px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="檢舉紀錄">
+        <h4>檢舉紀錄</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;top: 40px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="說明">
+        <h4>說明</h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="qq" style="position: relative;top: 40px;">
+        <img src="./pic/wonderful.png" alt="icon" width="55px" title="提供意見">
+        <h4>提供意見</h4>
+      </div>
+    </a>
+    <hr style="position: relative;top: 40px;">
+    <div style="padding-left: 20px;position: relative;top: 40px; width: 180px;">
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">簡介</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">媒體</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">版權</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">與我們聯絡</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">創作者</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">廣告</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">開發人員</a>
+      <br><br>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">條款</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">隱私權</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">政策與安全性</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">YoTube運作方式</a>
+      <a href="#" style="text-decoration: none; font-size: 14px ; color: darkgray;">測試新功能</a>
+
+      <p style="color: rgb(107, 107, 107);font-size: 12px;">© 2021 Guogle LLC</p>
+    </div>
+  </div>
+  <div class="rightbar">
+    <div class="topbar">
+      <input placeholder="搜尋">
+      <a href="#">
+        <div class="search">⌕</div>
+      </a>
+      <a href="#" class="ss"><img src="./pic/wonderful.png" alt="icon" width="75px" title="搜尋"></a>
+      <a href="#"><img src="./pic/三條線.png" alt="3 lines" width="55px" style="position: fixed;right: 110px;"></a>
+      <a href="#"><img src="./pic/三條線.png" alt="3 lines" width="55px" style="position: fixed;right: 150px"></a>
+      <a class="Login" href="#" style="position:fixed ;right: 0;margin-top: 10px;">⊚ 登入</a>
+      <hr style="margin-top: 9px;">
+    </div>
+    <div class="topbar1">
+      <a href="#">
+        <div class="kind"
+          style="margin-left: -15%;margin-top: 5px;background-color: rgb(235, 235, 235);color: rgb(41, 41, 41);">全部
+        </div>
+      </a>
+      <a href="#">
+        <div class="kind">音樂</div>
+      </a>
+      <a href="#">
+        <div class="kind">卡通</div>
+      </a>
+      <a href="#">
+        <div class="kind">直播中</div>
+      </a>
+      <a href="#">
+        <div class="kind">寵物</div>
+      </a>
+      <a href="#">
+        <div class="kind">動作冒險遊戲</div>
+      </a>
+      <a href="#">
+        <div class="kind">最新上傳</div>
+      </a>
+      <hr style="margin-top: 0px;">
+    </div>
+    <div
+      style="width: 100%;height: 2500px; ;background-color: rgb(24, 24, 24);margin-left: 222px;margin-top: 104px;text-align: center;">
+      <div class="ad">
+        <img src="./pic/markM.png" alt="YoutubeMusic" title="YoutubeMusic"
+          style="position: absolute;top: 15px;left: 70px;">
+        <p style="color: rgb(235, 235, 235);font-size: 20px;position: absolute;top: 35px;left: 78px;">經濟實惠的 Music
+          Premium 家庭方案</p>
+        <a href="#">
+          <p
+            style="height: 25px;width: 25px;background-color: rgb(151, 151, 151);font-size: 32px;line-height: 18px;position: absolute;right: 250px;top: -15px;color: rgb(29, 29, 29);text-indent: 1px;">
+            ⨯</p>
+        </a>
+        <a href="#">
+          <div
+            style="width: 85px; height: 38px; border: 2px solid rgb(235, 235, 235);color: rgb(235, 235, 235);font-size: 16px;position: absolute;left: 80px;top: 190px;line-height: 38px;">
+            立即訂閱</div>
+        </a>
+      </div>
+      <div style="position: absolute;top: 420px;width: 100%;left: 120px;">
+        <div class="col">
+          <a href="#"><img src="./pic/1.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/11.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">50首突破百萬的洗腦神曲你一定有聽過多想留在你身邊(少年,你的...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">甜美的旋律 Sweet Melody</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:62萬次．1個月前</div>
+          </a>
+          <a href="#"><img src="./pic/5.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/55.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">精選｜菲小老弟翻臉?!美碎「一帶一路」大業 中資千億合約急喊...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">關鍵時刻</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:34萬次．1週前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/2.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/22.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">英雄神秘客EP25-台南網咖住宿飲料無限場飲食物隨時有!</div>
+          </a>
+          <div class="na"><a href="#" class="artist">英雄日常Heroisme</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:68萬次．2個月前</div>
+          </a>
+          <a href="#"><img src="./pic/6.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/66.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">「無廣告板」森林系音樂&鋼琴吉他和大自然音律※最放鬆讀書...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">Music For Studying</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:42萬次．5個月前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/3.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/33.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">G.E.M.鄧紫棋【平行世界Parallel】MV(電影《刺殺小說...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">GEM鄧紫棋</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:389萬次．1週前</div>
+          </a>
+          <a href="#"><img src="./pic/7.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/77.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">不要再取奇怪的餐點名稱了｜#吹你腦｜喬瑟夫 ChillSeph</div>
+          </a>
+          <div class="na"><a href="#" class="artist">喬瑟夫 ChillSeph</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:514萬次．2個月前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/4.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/44.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">重看復仇者聯盟4終局之戰微細節分析!鋼鐵人交換手套掉碎片/...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">TEEPR 叭啦叭啦研究室</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:79萬次．10個月前</div>
+          </a>
+          <a href="#"><img src="./pic/8.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/88.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">瘋神無雙 官方正版【瘋神歌舞團-----鬼滅之刃完整版】</div>
+          </a>
+          <div class="na"><a href="#" class="artist">瘋神無雙</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:48萬次．9個月前</div>
+          </a>
+        </div>
+
+        <div class="line"></div>
+
+        <h3 style="color:rgb(235, 235, 235);transform: translateX(-40%);">發燒影片</h3>
+
+        <div class="col">
+          <a href="#"><img src="./pic/1.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/11.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">50首突破百萬的洗腦神曲你一定有聽過多想留在你身邊(少年,你的...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">甜美的旋律 Sweet Melody</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:62萬次．1個月前</div>
+          </a>
+          <a href="#"><img src="./pic/5.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/55.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">精選｜菲小老弟翻臉?!美碎「一帶一路」大業 中資千億合約急喊...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">關鍵時刻</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:34萬次．1週前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/2.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/22.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">英雄神秘客EP25-台南網咖住宿飲料無限場飲食物隨時有!</div>
+          </a>
+          <div class="na"><a href="#" class="artist">英雄日常Heroisme</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:68萬次．2個月前</div>
+          </a>
+          <a href="#"><img src="./pic/6.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/66.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">「無廣告板」森林系音樂&鋼琴吉他和大自然音律※最放鬆讀書...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">Music For Studying</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:42萬次．5個月前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/3.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/33.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">G.E.M.鄧紫棋【平行世界Parallel】MV(電影《刺殺小說...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">GEM鄧紫棋</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:389萬次．1週前</div>
+          </a>
+          <a href="#"><img src="./pic/7.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/77.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">不要再取奇怪的餐點名稱了｜#吹你腦｜喬瑟夫 ChillSeph</div>
+          </a>
+          <div class="na"><a href="#" class="artist">喬瑟夫 ChillSeph</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:514萬次．2個月前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/4.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/44.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">重看復仇者聯盟4終局之戰微細節分析!鋼鐵人交換手套掉碎片/...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">TEEPR 叭啦叭啦研究室</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:79萬次．10個月前</div>
+          </a>
+          <a href="#"><img src="./pic/8.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/88.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">瘋神無雙 官方正版【瘋神歌舞團-----鬼滅之刃完整版】</div>
+          </a>
+          <div class="na"><a href="#" class="artist">瘋神無雙</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:48萬次．9個月前</div>
+          </a>
+        </div>
+
+        <div class="line"></div>
+
+        <h3 style="color:rgb(235, 235, 235);transform: translateX(-40%);">退燒影片</h3>
+
+        <div class="col">
+          <a href="#"><img src="./pic/1.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/11.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">50首突破百萬的洗腦神曲你一定有聽過多想留在你身邊(少年,你的...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">甜美的旋律 Sweet Melody</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:62萬次．1個月前</div>
+          </a>
+          <a href="#"><img src="./pic/5.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/55.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">精選｜菲小老弟翻臉?!美碎「一帶一路」大業 中資千億合約急喊...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">關鍵時刻</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:34萬次．1週前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/2.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/22.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">英雄神秘客EP25-台南網咖住宿飲料無限場飲食物隨時有!</div>
+          </a>
+          <div class="na"><a href="#" class="artist">英雄日常Heroisme</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:68萬次．2個月前</div>
+          </a>
+          <a href="#"><img src="./pic/6.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/66.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">「無廣告板」森林系音樂&鋼琴吉他和大自然音律※最放鬆讀書...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">Music For Studying</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:42萬次．5個月前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/3.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/33.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">G.E.M.鄧紫棋【平行世界Parallel】MV(電影《刺殺小說...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">GEM鄧紫棋</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:389萬次．1週前</div>
+          </a>
+          <a href="#"><img src="./pic/7.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/77.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">不要再取奇怪的餐點名稱了｜#吹你腦｜喬瑟夫 ChillSeph</div>
+          </a>
+          <div class="na"><a href="#" class="artist">喬瑟夫 ChillSeph</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:514萬次．2個月前</div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="#"><img src="./pic/4.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/44.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">重看復仇者聯盟4終局之戰微細節分析!鋼鐵人交換手套掉碎片/...</div>
+          </a>
+          <div class="na"><a href="#" class="artist">TEEPR 叭啦叭啦研究室</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:79萬次．10個月前</div>
+          </a>
+          <a href="#"><img src="./pic/8.jpg" alt="" width=95%></a>
+          <a href="#"><img src="./pic/88.jpg" alt="" width=14%></a>
+          <a href="#">
+            <div class="title">瘋神無雙 官方正版【瘋神歌舞團-----鬼滅之刃完整版】</div>
+          </a>
+          <div class="na"><a href="#" class="artist">瘋神無雙</a></div>
+          <a href="#">
+            <div class="na" style="margin-bottom: 16%;">觀看次數:48萬次．9個月前</div>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+</body>
+
+</html>
